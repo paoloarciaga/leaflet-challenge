@@ -1,5 +1,5 @@
 // Define the URL for fetching earthquake data from USGS
-const earthquakeUSGSDataUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson";
+const earthquakeUSGSDataUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
 // Create a Leaflet map with specified center and zoom level
 var myMap = L.map("map").setView([38.70, -121.17], 6);
@@ -52,6 +52,7 @@ function getRadius(mag) {
 fetch(earthquakeUSGSDataUrl)
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         // Add GeoJSON layer to the map
         L.geoJson(data, {
             // Create circle markers for each earthquake point
