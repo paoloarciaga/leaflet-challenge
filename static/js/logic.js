@@ -88,6 +88,9 @@ fetch(earthquakeUSGSDataUrl)
                     from + (to ? '&ndash;' + to + '<br>' : '+');
             }
 
+            // Increase font size of legend
+            div.style.fontSize = '20px';
+
             return div;
         };
 
